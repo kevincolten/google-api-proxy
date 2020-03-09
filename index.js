@@ -54,6 +54,7 @@ app.get('/place/:placeId', async (req, res) => {
       .asPromise();
     res.json(googlePlace);
   } catch (error) {
+    res.status(500).send('error fetching place')
     console.error(error);
   }
 })
