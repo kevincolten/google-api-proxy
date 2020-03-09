@@ -7,6 +7,8 @@ const googleMapsClient = require('@google/maps').createClient({
   rate: { limit: 900 },
 });
 
+app.get('/ping', async (req, res) => res.send('pong'))
+
 app.get('/place/:placeId', async (req, res) => {
   const fields = [
     'address_component',
